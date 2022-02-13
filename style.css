@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #ccc;
+    font-family: sans-serif;
+}
+.container {
+    margin: 200px auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(70deg);
+    animation: cub 6s infinite;
+}
+.side {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 35px;
+}
+.front { 
+    transform: translateZ(100px); 
+    background: blueviolet;
+
+}
+.back { 
+    transform: rotateY(180deg) translateZ(100px); 
+    background: gold;
+
+}
+.right { 
+    transform: rotateY(90deg) translateZ(100px); 
+    background: #ff0000;
+
+}
+.left { 
+    transform: rotateY(-90deg) translateZ(100px); 
+    background: green;
+
+}
+.top { 
+    transform: rotateX(90deg) translateZ(100px); 
+    background: springgreen;
+
+}
+.bottom { 
+    transform: rotateX(-90deg) translateZ(100px); 
+    background: aqua;
+
+}
+@keyframes cub {
+    0% { transform: rotateX(0deg) rotateY(0deg) }
+    14% { transform: rotateX(0deg) rotateY(90deg) }
+    28% { transform: rotateX(0deg) rotateY(180deg) }
+    42% { transform: rotateX(0deg) rotateY(270deg) }
+    57% { transform: rotateX(90deg) rotateY(270deg) }
+    71% { transform: rotateX(180deg) rotateY(90deg) }
+    85% { transform: rotateX(-90deg) rotateY(90deg) }
+    100% { transform: rotateX(1deg) rotateY(1deg) }
+}
